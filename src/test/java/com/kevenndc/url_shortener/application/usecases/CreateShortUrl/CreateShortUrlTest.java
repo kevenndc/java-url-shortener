@@ -29,4 +29,23 @@ class CreateShortUrlTest {
         assertInstanceOf(Url.class, output.getUrl());
     }
 
+    @Test
+    void testItCreatesAShortUrlWithARandomAlias() {
+        UrlRepository urlRepositoryMock = mock(UrlRepository.class);
+        UrlEntity urlEntity = new UrlEntity()
+                .setOriginalUrl("http://test.com/test/1/get-test")
+                .setAlias("axBy1")
+                .setCreatedAt(LocalDateTime.now());
+        when(urlRepositoryMock.save(any(UrlEntity.class))).thenReturn(urlEntity.setId(2L));
+        HttpServletRequest httpServletRequestMock = mock(HttpServletRequest.class);
+        CreateShortUrlInput input = new CreateShortUrlInput("http://test.com/test/1/get-test", httpServletRequestMock);
+
+        CreateShortUrl createShortUrl = new CreateShortUrl(urlRepositoryMock);
+
+        CreateShortUrlOutput output = createShortUrl.execute(input);
+        Url url = output.getUrl();
+        assertNotNull(url.getAlias());
+        verify(urlRepositoryMock).save(argThat(urlEntityMock -> urlEntityMock.getAlias() != null));
+    }
+
 }
