@@ -1,4 +1,4 @@
-package com.kevenndc.url_shortener.application.url.usecases.CreateShortUrl;
+package com.kevenndc.url_shortener.application.usecases.CreateShortUrl;
 
 import com.kevenndc.url_shortener.domain.models.Url;
 

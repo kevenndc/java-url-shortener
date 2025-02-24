@@ -1,4 +1,4 @@
-package com.kevenndc.url_shortener.application.url.usecases.CreateShortUrl;
+package com.kevenndc.url_shortener.application.usecases.CreateShortUrl;
 
 import jakarta.servlet.http.HttpServletRequest;
 

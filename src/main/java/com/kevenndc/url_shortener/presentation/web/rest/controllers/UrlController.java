@@ -1,8 +1,8 @@
 package com.kevenndc.url_shortener.presentation.web.rest.controllers;
 
-import com.kevenndc.url_shortener.application.url.usecases.CreateShortUrl.CreateShortUrl;
-import com.kevenndc.url_shortener.application.url.usecases.CreateShortUrl.CreateShortUrlInput;
-import com.kevenndc.url_shortener.application.url.usecases.CreateShortUrl.CreateShortUrlOutput;
+import com.kevenndc.url_shortener.application.usecases.CreateShortUrl.CreateShortUrl;
+import com.kevenndc.url_shortener.application.usecases.CreateShortUrl.CreateShortUrlInput;
+import com.kevenndc.url_shortener.application.usecases.CreateShortUrl.CreateShortUrlOutput;
 import com.kevenndc.url_shortener.presentation.web.rest.api.UrlResource;
 import com.kevenndc.url_shortener.presentation.web.rest.dto.CreateShortUrl.CreateShortUrlRequest;
 import com.kevenndc.url_shortener.presentation.web.rest.dto.CreateShortUrl.CreateShortUrlResponse;
